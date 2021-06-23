@@ -115,6 +115,7 @@ void QtClientServer::connected()
     regBtn->setEnabled(false);
     clientRbtn->setEnabled(false);
     serverRbtn->setEnabled(false);
+    ipEdit->setEnabled(false);
 }
 
 void QtClientServer::send()

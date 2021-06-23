@@ -72,12 +72,12 @@ SOCKET ServerThread::waitForConnection()
         emit sendNotification(QString("socket failed with error: %1").arg(WSAGetLastError()), MSG_TYPE::ERROR_MSG);
         return INVALID_SOCKET;
     }
-
+    
     //Prepare the sockaddr_in structure
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = INADDR_ANY; //inet_addr("127.0.0.1"); //INADDR_ANY;
     server.sin_port = htons(SERVER_PORT);
-
+    
     //Bind
     if (bind(ListenSocket, (struct sockaddr*)&server, sizeof(server)) == SOCKET_ERROR)
     {
